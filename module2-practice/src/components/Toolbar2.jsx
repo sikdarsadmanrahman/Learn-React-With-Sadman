@@ -1,32 +1,24 @@
 function Button({ onSmash, children }) {
-  return <button onClick={onSmash}>{children}</button>;
-}
-
-function PlayButton({ movieName }) {
-  function handlePlay() {
-    alert(`Playing ${movieName}`);
-  }
-
-  return <Button onSmash={handlePlay}>{movieName}</Button>;
-}
-
-function UploadButton() {
   return (
-    <Button
-      onSmash={() => {
-        alert(`Uploading...`);
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        onSmash();
+        console.log(children);
       }}
     >
-      Upload Image
-    </Button>
+      {children}
+    </button>
   );
 }
 
 export default function Toolbar2() {
   return (
-    <div>
-      <PlayButton movieName="No movie" />
-      <UploadButton />
+    <div className="Toolbar" onClick={() => alert("Toolbar is clicked")}>
+      <Button onSmash={() => alert("Movie is Hara")}>No Movie</Button>
+      <Button onSmash={() => alert("Mahsa Allah, you're on the right track.")}>
+        Halal Life
+      </Button>
     </div>
   );
 }

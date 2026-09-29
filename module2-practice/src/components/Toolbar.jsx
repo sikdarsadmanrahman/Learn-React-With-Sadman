@@ -1,20 +1,24 @@
-function AlertHandler({ message, children }) {
-  return (
-    <button
-      onClick={() => {
-        alert(message);
-      }}
-    >
-      {children}
-    </button>
-  );
-}
-
 export default function Toolbar() {
   return (
-    <div>
-      <AlertHandler message="Movie is haram">No Movie</AlertHandler>
-      <AlertHandler message="Uploading...">Upload Image</AlertHandler>
+    <div
+      onClick={() => {
+        alert("Toolbar clicked");
+      }}
+    >
+      <button
+        onClick={() => {
+          alert("No Movie clicked");
+        }}
+      >
+        No Movie
+      </button>
+      <button
+        onClick={() => {
+          alert("Masha Allah! You are on the right TrackEvent.");
+        }}
+      >
+        Lead a Halal Life
+      </button>
     </div>
   );
 }
